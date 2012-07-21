@@ -1,0 +1,14 @@
+{
+	"name": "dir-static",
+	"description": "Simple directory serving middleware",
+	"version": "0.1.0",
+	"author": "download <download333@gmail.com>",
+	"main": "static.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/download13/dir-static"
+	},
+	"engine": {
+		"node": "*"
+	}
+}
