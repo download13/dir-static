@@ -26,8 +26,12 @@ module.exports = function(servePath) {
 	
 	return function(req, res, next) {
 		// TODO: Use the path module later
-		var path = url.parse(req.url).pathname.replace('..', '.', 'g').substr(1);
+		var path = url.parse(req.url).pathname;
 		if(path.indexOf(servePath) != 0) return next();
+		while(path.indexOf('..') != -1) {
+			path = path.replace('..', '.', 'g');
+		}
+		path = path.substr(1);
 		
 		fs.exists(path, function(exists) {
 			if(!exists) {
