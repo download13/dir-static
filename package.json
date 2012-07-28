@@ -1,7 +1,7 @@
 {
 	"name": "dir-static",
 	"description": "Simple directory serving middleware",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "download <download333@gmail.com>",
 	"main": "static.js",
 	"repository": {
