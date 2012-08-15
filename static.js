@@ -76,7 +76,11 @@ module.exports = function(servePath) {
 			var method = req.method.toUpperCase();
 			if(method == 'GET') {
 				res.writeHead(200, headers);
+				
 				var stream = fs.createReadStream(path);
+				res.on('close', function() {
+					stream.destroy();
+				});
 				stream.pipe(res);
 			} else if(method == 'HEAD') {
 				res.writeHead(200, headers);
